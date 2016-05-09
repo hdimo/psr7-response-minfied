@@ -26,5 +26,8 @@
 		"cs-fix": "phpcbf",
 		"serve": "php -S 0.0.0.0:8080",
 		"test": "phpunit"
+	},
+	"require": {
+		"matthiasmullie/minify": "^1.3"
 	}
 }
