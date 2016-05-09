@@ -11,11 +11,8 @@ namespace Composer\File;
 
 class FileFactory
 {
-
     public function make($type)
     {
 
     }
-
-
 }

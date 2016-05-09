@@ -12,9 +12,12 @@ require 'vendor/autoload.php';
 
 $content = file_get_contents('./data/page.html');
 
-$n = preg_match_all('/"([^"]+?\.js)"/', $content, $matches);
-if ($n !== FALSE && $n > 0) {
-    var_dump($matches[1]);
-}
+$compressor = new \ResponseCompressor\Compressor();
+
+$compressor->loadPage($content);
+$compressor->extractCSSFiles();
+$compressor->extractJSFiles();
+
+
 
 echo $content;
