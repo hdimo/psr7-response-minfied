@@ -1,8 +1,30 @@
 {
 	"autoload":{
 		"psr-4":{
-			"ResponseCompressor\\":"src/",
+			"ResponseCompressor\\":"src/"
+		}
+	},
+
+	"autoload-dev": {
+		"psr-4": {
 			"ResponseCompressorTest\\":"test/"
 		}
+	},
+
+	"require-dev": {
+		"phpunit/phpunit": "^4.8",
+		"squizlabs/php_codesniffer": "^2.3",
+		"filp/whoops": "^2.0"
+	},
+
+	"scripts": {
+		"check": [
+			"@cs",
+			"@test"
+		],
+		"cs": "phpcs",
+		"cs-fix": "phpcbf",
+		"serve": "php -S 0.0.0.0:8080",
+		"test": "phpunit"
 	}
 }

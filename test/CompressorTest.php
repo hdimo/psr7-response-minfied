@@ -10,14 +10,17 @@ use ResponseCompressor\Compressor;
 class CompressorTest extends \PHPUnit_Framework_TestCase
 {
 
-	public function testCreateCompressorClass(){
-		$compr = new Compressor();
+	protected $compressor;
+
+	public function setUp()
+	{
+		//$this->compressor = this->pro
 	}
 
-	public function testMinifyFile(){
-		$compr = new Compressor();
-		$compr->minify();
+	public function testExtractCSSFiles()
+	{
+
+
 	}
-	
 
 }

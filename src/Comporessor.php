@@ -7,21 +7,33 @@ namespace ResponseCompressor;
 class Compressor
 {
 
-	$files = [];
+	const FILE_TYPE_CSS = "css";
+	const FILE_TYPE_JS = "js";
+
+	protected $files = [];
+
+	protected $pageContent;
 	
 	function __construct()
 	{
 		
 	}
 
-	public function minify(){
-		$buffer = "";
-		foreach ($this->files as $fileToCompress) {
-			$buffer .= file_get_contents($fileToCompress);
-		}
-		$buffer = preg_replace('!/\*[^*]*\*+([^/][^*]*\*+)*/!', '', $buffer);
-		$buffer = str_replace(': ', ':', $buffer);
-		$buffer = str_replace(array("\r\n", "\r", "\n", "\t", '  ', '    ', '    '), '', $buffer);
-		echo($buffer);
+	public function loadPage($pageContent)
+	{
+
 	}
+
+	public function extractJSFiles(){
+
+	}
+
+	public function extractCSSFiles(){
+		$n = preg_match_all('/"([^"]+?\.css)"/', $this->pageContent, $matches);
+		if ($n !== FALSE && $n > 0) {
+			var_dump($matches[1]);
+		}
+	}
+
+
 }

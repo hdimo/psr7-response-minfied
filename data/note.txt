@@ -1,0 +1,3 @@
+ -get cannonical name for grouped file to build one file
+
+ -get filename from files
