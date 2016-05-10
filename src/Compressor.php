@@ -18,24 +18,39 @@ class Compressor
     {
     }
 
+    /**
+     * @param $pageContent
+     */
     public function loadPage($pageContent)
     {
         $this->pageContent = $pageContent;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getPageContent()
+    {
+        return $this->pageContent;
+    }
+
+
     public function extractJSFiles()
     {
         $n = preg_match_all(sprintf('/"([^"]+?\.%s)"/', self::FILE_TYPE_JS), $this->pageContent, $matches);
         if ($n !== FALSE && $n > 0) {
-            var_dump($matches[1]);
+            foreach($matches[1] as $fl){
+                $this->files[self::FILE_TYPE_CSS] = FileFactory::make($fl, self::FILE_TYPE_CSS);
+            }
+            //var_dump($matches[1]);
         }
     }
 
     public function extractCSSFiles()
     {
-        $n = preg_match_all(sprintf('/"([^"]+?\.%s)"/', self::FILE_TYPE_CSS), $this->pageContent, $matches);
+        $n = preg_match_all(sprintf('/"([^"]+?\.%s)"/', self::FILE_TYPE_JS), $this->pageContent, $matches);
         if ($n !== FALSE && $n > 0) {
-            var_dump($matches[1]);
+            $this->files[self::FILE_TYPE_JS] = $matches[1];
         }
     }
 
@@ -50,5 +65,23 @@ class Compressor
 
         }
     }
+
+    /**
+     * @return array
+     */
+    public function getFiles()
+    {
+        return $this->files;
+    }
+
+    /**
+     * @param array $files
+     */
+    public function setFiles($files)
+    {
+        $this->files = $files;
+    }
+
+
 
 }

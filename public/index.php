@@ -6,11 +6,9 @@
  * Time: 7:40 PM
  */
 
-require 'vendor/autoload.php';
+require '../vendor/autoload.php';
 
-
-
-$content = file_get_contents('./data/page.html');
+$content = file_get_contents('../data/page.html');
 
 $compressor = new \ResponseCompressor\Compressor();
 
@@ -18,6 +16,6 @@ $compressor->loadPage($content);
 $compressor->extractCSSFiles();
 $compressor->extractJSFiles();
 
-
+var_dump($compressor->getFiles());
 
 echo $content;

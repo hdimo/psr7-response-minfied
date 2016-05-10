@@ -12,4 +12,16 @@ namespace Composer\File;
 class CssFile extends AbstractFile
 {
 
+    public function __construct($info)
+    {
+        $this->loadInfo($info);
+    }
+
+
+    public function loadInfo($info){
+
+    }
+
+
+
 }
