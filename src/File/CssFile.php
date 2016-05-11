@@ -1,27 +1,38 @@
 <?php
 /**
- * Created by PhpStorm.
  * User: khaled
  * Date: 5/9/16
- * Time: 7:12 PM
  */
+namespace ResponseCompressor\File;
 
-namespace Composer\File;
 
-
+/**
+ * Class CssFile
+ * @package ResponseCompressor\File
+ */
 class CssFile extends AbstractFile
 {
+    /**
+     * @var string
+     */
+    protected $type = "css";
 
-    public function __construct($info)
+    /**
+     * CssFile constructor.
+     * @param $path
+     */
+    public function __construct($path)
     {
-        $this->loadInfo($info);
+        $this->path = $path;
+        $this->loadInfo();
     }
 
-
-    public function loadInfo($info){
-
+    /**
+     * load information name, minimised content from given path , link
+     */
+    public function loadInfo(){
+        $ex = explode('/',$this->path);
+        $this->setName(array_pop($ex));
+        $this->minify();
     }
-
-
-
 }

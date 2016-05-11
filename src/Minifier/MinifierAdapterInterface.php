@@ -8,7 +8,12 @@
 
 namespace ResponseCompressor\Minifier;
 
-interface MinifierAdapter
+interface MinifierAdapterInterface
 {
+    /**
+     * minify file content
+     *
+     * @return mixed
+     */
     public function minify();
 }

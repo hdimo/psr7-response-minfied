@@ -8,7 +8,5 @@
 
 namespace ResponseCompressor\Exception;
 
-
 class InvalidFileTypeException extends \Exception
-{
-}
+{}

@@ -6,7 +6,7 @@
  * Time: 7:28 PM
  */
 
-namespace Composer\File;
+namespace ResponseCompressor\File;
 
 
 use ResponseCompressor\Compressor;
