@@ -117,6 +117,7 @@ class Compressor
         return sprintf("%s.%s", $cannonicalFileName, $type);
     }
 
+
     /**
      * group all minimised content of files base on type in one content
      *

@@ -10,6 +10,4 @@ namespace ResponseCompressor\Exception;
 
 
 class MissingArgumentException extends \Exception
-{
-
-}
+{}

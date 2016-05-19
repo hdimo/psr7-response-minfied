@@ -1,29 +1,36 @@
 <?php
 /**
- * Created by PhpStorm.
  * User: khaled
  * Date: 5/9/16
- * Time: 7:28 PM
  */
-
 namespace ResponseCompressor\File;
 
 
 use ResponseCompressor\Compressor;
 use ResponseCompressor\Exception\FileNotExistException;
 
+/**
+ * Class FileFactory
+ * @package ResponseCompressor\File
+ */
 class FileFactory
 {
-    public static function make($info , $fileType)
+    /**
+     * @param $path
+     * @param $fileType
+     * @return CssFile|JsFile|void
+     * @throws FileNotExistException
+     */
+    public static function make($path , $fileType)
     {
 
         switch($fileType){
             case Compressor::FILE_TYPE_CSS:
-                return new CssFile($info);
+                return new CssFile($path);
             break;
 
             case Compressor::FILE_TYPE_JS:
-                return new JsFile($info);
+                return new JsFile($path);
             break;
 
             default:

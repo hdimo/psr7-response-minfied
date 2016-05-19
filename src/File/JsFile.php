@@ -1,15 +1,18 @@
 <?php
 /**
- * Created by PhpStorm.
  * User: khaled
  * Date: 5/9/16
- * Time: 7:13 PM
  */
+namespace ResponseCompressor\File;
 
-namespace Composer\File;
-
-
+/**
+ * Class JsFile
+ * @package ResponseCompressor\File
+ */
 class JsFile extends AbstractFile
 {
-
+    /**
+     * @var string
+     */
+    protected $type = "js";
 }

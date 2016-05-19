@@ -8,5 +8,5 @@
 
 namespace ResponseCompressor\Exception;
 
-class InvalidFileTypeException extends \Exception
+class InvalidFileTypeException extends \InvalidArgumentException
 {}
